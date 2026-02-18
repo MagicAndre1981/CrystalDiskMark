@@ -213,8 +213,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 9,0,1,0
- PRODUCTVERSION 9,0,1,0
+ FILEVERSION 9,0,2,0
+ PRODUCTVERSION 9,0,2,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -229,33 +229,29 @@ BEGIN
     BEGIN
         BLOCK "041103a4"
         BEGIN
-            VALUE "FileVersion", "9.0.1.0"
-            VALUE "ProductVersion", "9.0.1.0"
+            VALUE "FileVersion", "9.0.2.0"
+            VALUE "ProductVersion", "9.0.2.0"
             VALUE "OriginalFilename", "DiskMark.exe"
             VALUE "InternalName", "DiskMark.exe"
-#ifdef MSI_MEI_SUPPORT
             VALUE "Comments", "https://crystalmark.info/"
-#else
-            VALUE "Comments", "https://crystalmark.info/ MIT License"
-#endif
             VALUE "CompanyName", "Crystal Dew World"
 
 #ifdef SUISHO_AOI_SUPPORT
             VALUE "FileDescription", "CrystalDiskMark Aoi Edition"
             VALUE "ProductName", "CrystalDiskMark Aoi Edition"
-            VALUE "LegalCopyright", "(C) 2007-2025 hiyohiyo, (C) 2025 CrystalMark Inc., (C) 2023-2025 nijihashi sola"
+            VALUE "LegalCopyright", "(C) 2007-2026 hiyohiyo, (C) 2023-2026 nijihashi sola"
 #elif MSI_MEI_SUPPORT
             VALUE "FileDescription", "CrystalDiskMark MSI Mei Mihoshi Edition"
             VALUE "ProductName", "CrystalDiskMark MSI Mei Mihoshi Edition"
-            VALUE "LegalCopyright", "(C) 2007-2025 hiyohiyo, (C) 2025 CrystalMark Inc., (C) 2024-2025 Micro-Star INT'L CO., LTD."
+            VALUE "LegalCopyright", "(C) 2007-2026 hiyohiyo, (C) 2024-2026 Micro-Star INT'L CO., LTD."
 #elif SUISHO_SHIZUKU_SUPPORT
             VALUE "FileDescription", "CrystalDiskMark Shizuku Edition"
             VALUE "ProductName", "CrystalDiskMark Shizuku Edition"
-            VALUE "LegalCopyright", "(C) 2007-2025 hiyohiyo, (C) 2025 CrystalMark Inc., (C) 2012-2025 kirino kasumu"
+            VALUE "LegalCopyright", "(C) 2007-2026 hiyohiyo, (C) 2012-2026 kirino kasumu"
 #else
             VALUE "FileDescription", "CrystalDiskMark"
             VALUE "ProductName", "CrystalDiskMark"
-            VALUE "LegalCopyright", "(C) 2007-2025 hiyohiyo, (C) 2025 CrystalMark Inc., "
+            VALUE "LegalCopyright", "(C) 2007-2026 hiyohiyo6"
 #endif
 
         END

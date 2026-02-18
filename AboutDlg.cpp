@@ -174,13 +174,13 @@ void CAboutDlg::UpdateDialogSize()
 	m_CtrlLicense.SetHandCursor();
 
 #ifdef SUISHO_AOI_SUPPORT
-	m_CtrlVersion.InitControl(0, 152, 288, 28, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, BS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlEdition.InitControl(0, 180, 288, 28, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlRelease.InitControl(0, 216, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlCopyright1.InitControl(0, 236, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlCopyright2.InitControl(0, 256, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlCopyright3.InitControl(0, 276, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
-	m_CtrlLicense.InitControl(0, 296, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, BS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlVersion.InitControl(0, 136, 288, 28, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, BS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlEdition.InitControl(0, 164, 288, 28, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlRelease.InitControl(0, 200, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlCopyright1.InitControl(0, 220, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlCopyright2.InitControl(0, 240, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlCopyright3.InitControl(0, 260, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, SS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
+	m_CtrlLicense.InitControl(0, 280, 288, 20, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, BS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
 
 #elif MSI_MEI_SUPPORT
 	m_CtrlVersion.InitControl(0, 204, 288, 28, m_ZoomRatio, m_hPal, &m_BkDC, NULL, 0, BS_CENTER, OwnerDrawTransparent, FALSE, FALSE, FALSE);
