@@ -8,7 +8,6 @@
 #include "stdafx.h"
 #include "OsInfoFx.h"
 #include "UtilityFx.h"
-#include "SystemInfoFx.h"
 
 typedef BOOL (WINAPI* FuncGetProductInfo)(DWORD, DWORD, DWORD, DWORD, PDWORD);
 typedef BOOL (WINAPI* FuncGetNativeSystemInfo)(LPSYSTEM_INFO);

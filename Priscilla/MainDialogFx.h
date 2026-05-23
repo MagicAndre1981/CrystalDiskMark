@@ -7,9 +7,6 @@
 
 #pragma once
 #include "DialogFx.h"
-#include "UtilityFx.h"
-#include "OsInfoFx.h"
-#include "UAHMenuBar.h"
 
 class CMainDialogFx : public CDialogFx
 {

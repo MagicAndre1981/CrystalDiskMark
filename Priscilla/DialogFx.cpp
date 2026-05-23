@@ -10,14 +10,8 @@
 #include "DialogFx.h"
 #include "UtilityFx.h"
 #include "OsInfoFx.h"
-
-//#include <Shlwapi.h>
-#if _MSC_VER > 1310
-#include <strsafe.h>
-#endif
-
-using namespace Gdiplus;
-#pragma	comment(lib,"Gdiplus.lib")
+#include <cmath>
+#include "DarkMode.h"
 
 // defined by Windows 8.1/Windows 2012 R2
 #ifndef WM_DPICHANGED
@@ -255,18 +249,18 @@ void CDialogFx::SetClientSize(int sizeX, int sizeY, double zoomRatio)
 
 void CDialogFx::UpdateBackground(BOOL resize, BOOL bDarkMode)
 {
-	HRESULT hr;
+	BOOL result = FALSE;
 	CImage srcBitmap;
 	double ratio = m_ZoomRatio;
 	m_bBkImage = FALSE;
 
 #if _MSC_VER > 1310
 	if (resize) { m_ZoomRatio = 3.0; }
-	hr = srcBitmap.Load(IP(m_BackgroundName));
+	result = srcBitmap.Load(IP(m_BackgroundName));
 	if (resize) { m_ZoomRatio = ratio; }
 #else
 	if (resize) { m_ZoomRatio = 1.0; }
-	hr = srcBitmap.Load(IP(m_BackgroundName));
+	result = srcBitmap.Load(IP(m_BackgroundName));
 	if (resize) { m_ZoomRatio = ratio; }
 #endif
 
@@ -277,7 +271,7 @@ void CDialogFx::UpdateBackground(BOOL resize, BOOL bDarkMode)
 	}
 	DeleteDC(hScreenDC); // delete it after use
 
-	if (SUCCEEDED(hr))
+	if (result)
 	{
 		m_bBkImage = TRUE;
 		CBitmap	baseBitmap;
@@ -327,19 +321,9 @@ void CDialogFx::UpdateBackground(BOOL resize, BOOL bDarkMode)
 		srcBitmap.BitBlt(baseDC.GetSafeHdc(), 0, 0, SRCCOPY);
 		srcBitmap.Destroy();
 
-		if(m_hPal || (LOBYTE(LOWORD(GetVersion()))) == 3)
-		{
-			m_BkDC.StretchBlt(0, 0, w, h, &baseDC, 0, 0,  orgw, orgh, SRCCOPY);
-		}
-		else
-		{
-			Bitmap* pBitmap = Bitmap::FromHBITMAP((HBITMAP)baseBitmap.GetSafeHandle(), NULL);
-			Graphics	g(m_BkDC.GetSafeHdc());
-			g.SetInterpolationMode(InterpolationModeHighQualityBicubic);
-			g.DrawImage(pBitmap, 0, 0, w, h);
-
-			delete	pBitmap;
-		}
+		m_BkDC.SetStretchBltMode(HALFTONE);
+		SetBrushOrgEx(m_BkDC, 0, 0, NULL);
+		m_BkDC.StretchBlt(0, 0, w, h, &baseDC, 0, 0, orgw, orgh, SRCCOPY);
 
 		baseBitmap.DeleteObject();
 		baseDC.DeleteDC();

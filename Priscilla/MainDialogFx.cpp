@@ -8,6 +8,9 @@
 #include "stdafx.h"
 #include "MainDialogFx.h"
 #include <ctime>
+#include <UAHMenuBar.h>
+#include "UtilityFx.h"
+#include "OsInfoFx.h"
 using namespace std;
 
 CMainDialogFx::CMainDialogFx(UINT dlgResouce, CWnd* pParent)
@@ -553,7 +556,7 @@ void CMainDialogFx::OnWindowPosChanging(WINDOWPOS * lpwndpos)
 		}
 	}
 
-    CDialogFx::OnWindowPosChanging(lpwndpos);
+	CDialogFx::OnWindowPosChanging(lpwndpos);
 }
 
 void CMainDialogFx::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
@@ -890,16 +893,12 @@ void CMainDialogFx::SaveImageDlg(CImage* image)
 	GetLocalTime(&st);
 	path.Format(_T("%s_%04d%02d%02d%02d%02d%02d"), PRODUCT_FILENAME, st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
 
-	CString filter = _T("PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|BMP (*.bmp)|*.bmp||");
+	CString filter = _T("PNG (*.png)|*.png|BMP (*.bmp)|*.bmp||");
 	CFileDialog save(FALSE, _T(""), path, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT | OFN_EXPLORER, filter);
 
 	if (save.DoModal() == IDOK)
 	{
-		HRESULT result = image->Save(save.GetPathName());
-		if (SUCCEEDED(result))
-		{
-			//	AfxMessageBox(_T("SUCCEEDED");
-		}
+		image->Save(save.GetPathName().GetString());
 	}
 }
 

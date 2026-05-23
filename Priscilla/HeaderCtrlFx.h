@@ -7,8 +7,6 @@
 
 #pragma once
 
-#include "CommonFx.h"
-
 class CHeaderCtrlFx : public CHeaderCtrl
 {
 	DECLARE_DYNAMIC(CHeaderCtrlFx)

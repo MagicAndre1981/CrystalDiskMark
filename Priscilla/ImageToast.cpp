@@ -67,7 +67,7 @@ BOOL CImageToast::EnsureWindowCreated()
     DWORD ex = WS_EX_TOPMOST | WS_EX_TOOLWINDOW | WS_EX_LAYERED;
     DWORD st = WS_POPUP;
 
-    if (!CreateEx(ex, cls, L"", st, CRect(0,0,0,0), nullptr, 0))
+    if (!CreateEx(ex, cls, _T(""), st, CRect(0,0,0,0), nullptr, 0))
         return FALSE;
 
     ShowWindow(SW_SHOWNOACTIVATE);
@@ -265,5 +265,5 @@ void CImageToast::OpenUrlIfAny()
 
     m_opened = TRUE;
 
-    ::ShellExecuteW(nullptr, L"open", m_url, nullptr, nullptr, SW_SHOWNORMAL);
+    ::ShellExecuteW(nullptr, _T("open"), m_url, nullptr, nullptr, SW_SHOWNORMAL);
 }

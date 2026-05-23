@@ -1483,8 +1483,13 @@ void GetGpuInfo(CString& gpuInfo)
 							else
 							{
 								_tcscpy(str, key);
+								#if _MSC_VER > 1310
 								PathRemoveFileSpec(str);
 								CString cstr = PathFindFileName(str);
+								#else
+								PathRemoveFileSpecFx(str);
+								CString cstr = PathFindFileNameFx(str);
+								#endif
 								cstr += _T(" compatible device");
 								if (gpuInfo.IsEmpty())
 								{

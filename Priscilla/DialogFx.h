@@ -7,10 +7,7 @@
 
 #pragma once
 
-#include "CommonFx.h"
-#include "DarkMode.h"
-
-#include <atlimage.h>
+#include "ImageFx.h"
 
 class CDialogFx : public CDialog
 {

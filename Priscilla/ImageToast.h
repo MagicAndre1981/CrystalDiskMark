@@ -1,4 +1,4 @@
-/*---------------------------------------------------------------------------*/
+Ôªø/*---------------------------------------------------------------------------*/
 //       Author : hiyohiyo
 //         Mail : hiyohiyo@crystalmark.info
 //          Web : https://crystalmark.info/
@@ -52,7 +52,6 @@ private:
     int   m_fadeOutMs{ 250 };
     CString m_url;
 
-    // èÛë‘
     HBITMAP m_hDib{ nullptr };
     SIZE    m_bmpSize{ 0,0 };
     BYTE    m_curAlpha{ 0 };

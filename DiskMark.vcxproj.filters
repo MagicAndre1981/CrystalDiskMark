@@ -75,6 +75,12 @@
     <ClCompile Include="Priscilla\UAHMenuBar.cpp">
       <Filter>Priscilla</Filter>
     </ClCompile>
+    <ClCompile Include="Priscilla\stb_image_impl.cpp">
+      <Filter>Priscilla</Filter>
+    </ClCompile>
+    <ClCompile Include="Priscilla\stb_image_write_impl.cpp">
+      <Filter>Priscilla</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutDlg.h">
@@ -135,6 +141,9 @@
       <Filter>Library</Filter>
     </ClInclude>
     <ClInclude Include="Priscilla\UAHMenuBar.h">
+      <Filter>Priscilla</Filter>
+    </ClInclude>
+    <ClInclude Include="Priscilla\stb_image_write.h">
       <Filter>Priscilla</Filter>
     </ClInclude>
   </ItemGroup>

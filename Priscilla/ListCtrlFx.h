@@ -7,12 +7,8 @@
 
 #pragma once
 
-#include "CommonFx.h"
 #include "HeaderCtrlFx.h"
-#include <atlimage.h>
-#include <gdiplus.h>
-#pragma comment(lib, "Gdiplus.lib")
-using namespace Gdiplus;
+#include "ImageFx.h"
 
 class CListCtrlFx : public CListCtrl
 {

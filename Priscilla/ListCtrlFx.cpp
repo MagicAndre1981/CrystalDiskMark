@@ -267,7 +267,7 @@ void CListCtrlFx::OnCustomdraw(NMHDR *pNMHDR, LRESULT *pResult)
 			}
 		}
 		break;
-    default:
+	default:
 		break;
 	}
 

@@ -19,6 +19,7 @@
 #include "EditFx.h"
 #include "UtilityFx.h"
 #include "OsInfoFx.h"
+#include "DarkMode.h"
 
 class CDiskMarkDlg : public CMainDialogFx
 {

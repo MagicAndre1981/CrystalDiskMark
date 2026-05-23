@@ -392,6 +392,7 @@ void CStaticFx::DrawControl(CDC* drawDC, LPDRAWITEMSTRUCT lpDrawItemStruct, CBit
 							DstBuffer[dn + 0] = (BYTE)((CtlBuffer[cn + 0] * a + DstBuffer[dn + 0] * na) / 255);
 							DstBuffer[dn + 1] = (BYTE)((CtlBuffer[cn + 1] * a + DstBuffer[dn + 1] * na) / 255);
 							DstBuffer[dn + 2] = (BYTE)((CtlBuffer[cn + 2] * a + DstBuffer[dn + 2] * na) / 255);
+							DstBuffer[dn + 3] = 255;
 							dn += (DstBmpInfo.bmBitsPixel / 8);
 							cn += (CtlBmpInfo.bmBitsPixel / 8);
 						}
@@ -403,6 +404,7 @@ void CStaticFx::DrawControl(CDC* drawDC, LPDRAWITEMSTRUCT lpDrawItemStruct, CBit
 							DstBuffer[dn + 0] = (BYTE)((CtlBuffer[cn + 0] * a + DstBuffer[dn + 0] * na) / 255);
 							DstBuffer[dn + 1] = (BYTE)((CtlBuffer[cn + 1] * a + DstBuffer[dn + 1] * na) / 255);
 							DstBuffer[dn + 2] = (BYTE)((CtlBuffer[cn + 2] * a + DstBuffer[dn + 2] * na) / 255);
+							DstBuffer[dn + 3] = 255;
 							dn += (DstBmpInfo.bmBitsPixel / 8);
 							cn += (CtlBmpInfo.bmBitsPixel / 8);
 						}
@@ -426,6 +428,7 @@ void CStaticFx::DrawControl(CDC* drawDC, LPDRAWITEMSTRUCT lpDrawItemStruct, CBit
 							DstBuffer[dn + 0] = (BYTE)((CtlBuffer[cn + 0] * a + DstBuffer[dn + 0] * na) / 255);
 							DstBuffer[dn + 1] = (BYTE)((CtlBuffer[cn + 1] * a + DstBuffer[dn + 1] * na) / 255);
 							DstBuffer[dn + 2] = (BYTE)((CtlBuffer[cn + 2] * a + DstBuffer[dn + 2] * na) / 255);
+							DstBuffer[dn + 3] = 255;
 							dn += (DstBmpInfo.bmBitsPixel / 8);
 							cn += (CtlBmpInfo.bmBitsPixel / 8);
 #if _MSC_VER > 1310
@@ -705,7 +708,7 @@ void CStaticFx::LoadCtrlBk(CDC* drawDC)
 //------------------------------------------------
 
 void CStaticFx::SetFontEx(CString face, int size, int sizeToolTip, double zoomRatio, double fontRatio,
-     COLORREF textColor, LONG fontWeight, BYTE fontRender)
+	 COLORREF textColor, LONG fontWeight, BYTE fontRender)
 {
 	LOGFONT logFont = { 0 };
 	logFont.lfCharSet = DEFAULT_CHARSET;

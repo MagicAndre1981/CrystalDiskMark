@@ -40,6 +40,9 @@
 #include <afxdtctl.h>		// MFC IE4 Common Control support
 #include <afxcmn.h>			// MFC Windows Common Control support
 
+#include "CommonFx.h"
+#include "UtilityFx.h"
+
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 
 #ifdef UWP
@@ -116,10 +119,10 @@
 // Version Information
 #define PRODUCT_NAME				L"CrystalDiskMark"
 #define PRODUCT_FILENAME			L"CrystalDiskMark"
-#define PRODUCT_VERSION				L"9.0.2"
+#define PRODUCT_VERSION				L"9.0.3"
 #define PRODUCT_SHORT_NAME		    L"CDM"
 
-#define PRODUCT_RELEASE				L"2026/02/17"
+#define PRODUCT_RELEASE				L"2026/05/24"
 #define PRODUCT_COPY_YEAR			L"2007-2026"
 #define PRODUCT_LICENSE				L"MIT License"
 
